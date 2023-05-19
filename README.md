@@ -60,6 +60,8 @@ Body:
 
 Use this for **livenessProbe** in Kubernetes.
 
+When the app is live.
+
 ```
 GET /liveness
 Host: 0.0.0.0:3000
@@ -71,7 +73,25 @@ Status: 200 Content-Type: application/json
 Body:
 {
     "data": {
-        "message": "I am alive!"
+        "message": "I am live!"
+    }
+}
+```
+
+When the app is not live.
+
+```
+GET /liveness
+Host: 0.0.0.0:3000
+
+curl --location 'http://0.0.0.0:3000/liveness'
+
+Response:
+Status: 500 Content-Type: application/json
+Body:
+{
+    "data": {
+        "message": "I am not live!"
     }
 }
 ```
@@ -80,7 +100,7 @@ Body:
 
 Use this for **readinessProbe** in Kubernetes.
 
-When pod is ready.
+When the app is ready.
 
 ```
 GET /readiness
@@ -98,7 +118,7 @@ Body:
 }
 ```
 
-When pod is not ready.
+When the app is not ready.
 
 ```
 GET /readiness

@@ -2,9 +2,10 @@
 
 const {
   responseSchema,
-  readinessUnhealthyRequestBodySchema
+  readinessUnhealthyRequestBodySchema,
+  livenessUnhealthyRequestBodySchema
 } = require('../schemas/health-route-response-schema');
-const { READINESS_STATUS, UNHEALTHY } = require('../configs/cors-config');
+const { READINESS_STATUS, LIVENESS_STATUS, UNHEALTHY } = require('../configs/cors-config');
 
 module.exports = async function HealthRoutes(fastify, services) {
   fastify.route({
@@ -14,11 +15,16 @@ module.exports = async function HealthRoutes(fastify, services) {
       tags: ['Health Check'],
       description: 'Check for liveness',
       response: {
-        200: responseSchema
+        200: responseSchema,
+        500: responseSchema
       }
     },
     handler: async function (request, reply) {
-      reply.code(200).send({ data: { message: 'I am alive!' } });
+      if ((await services.cacheService.get(LIVENESS_STATUS)) === UNHEALTHY) {
+        reply.code(500).send({ data: { message: 'I am not live!' } });
+      } else {
+        reply.code(200).send({ data: { message: 'I am live!' } });
+      }
     }
   });
 
@@ -29,7 +35,8 @@ module.exports = async function HealthRoutes(fastify, services) {
       tags: ['Health Check'],
       description: 'Check for readiness',
       response: {
-        200: responseSchema
+        200: responseSchema,
+        500: responseSchema
       }
     },
     handler: async function (request, reply) {
@@ -48,6 +55,24 @@ module.exports = async function HealthRoutes(fastify, services) {
       tags: ['Health Check'],
       description: 'Make readiness unhealthy.',
       body: readinessUnhealthyRequestBodySchema,
+      response: {
+        200: responseSchema
+      }
+    },
+    handler: async function (request, reply) {
+      const ttl = parseInt(request.body?.data?.ttl);
+      services.cacheService.set(READINESS_STATUS, UNHEALTHY, ttl);
+      reply.code(200).send({ data: { message: 'I am unhealthy!' } });
+    }
+  });
+
+  fastify.route({
+    method: 'PUT',
+    url: '/liveness/make/unhealthy',
+    schema: {
+      tags: ['Health Check'],
+      description: 'Make liveness unhealthy.',
+      body: livenessUnhealthyRequestBodySchema,
       response: {
         200: responseSchema
       }
