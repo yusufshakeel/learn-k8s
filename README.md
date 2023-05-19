@@ -9,6 +9,8 @@ This project is about learning Kubernetes.
 * [API endpoints](#api-endpoints)
 * [Docker Image](#docker-image)
 * [Docker Container in localhost](#docker-container-in-localhost)
+* [Tests](#tests)
+* [Kubernetes files](#kubernetes-files)
 
 ## Prerequisite
 
@@ -316,6 +318,11 @@ docker run -d -p 3000:3000 yusufshakeel/learn-k8s
 ```
 
 This will start the server on port 3000.
+
+## Kubernetes files
+
+Check the `k8s` folder for Kubernetes files.
+
 
 ## License
 
