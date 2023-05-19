@@ -96,6 +96,43 @@ Body:
 }
 ```
 
+### Liveness: make unhealthy
+
+This API will make the app liveness unhealthy. Pass the TTL in seconds.
+
+```
+Request:
+{
+  "data": {
+    "ttl": 100
+  }
+}
+```
+
+Default ttl: 60 seconds.
+
+```
+GET /liveness/make/unhealthy
+Host: 0.0.0.0:3000
+
+curl --location --request PUT 'http://0.0.0.0:3000/liveness/make/unhealthy' \
+--header 'Content-Type: application/json' \
+--data '{
+    "data": {
+        "ttl": 10
+    }
+}'
+
+Response:
+Status: 200 Content-Type: application/json
+Body:
+{
+    "data": {
+        "message": "I am unhealthy!"
+    }
+}
+```
+
 ### Readiness
 
 Use this for **readinessProbe** in Kubernetes.
@@ -138,7 +175,7 @@ Body:
 
 ### Readiness: make unhealthy
 
-This API will make the pod readiness unhealthy. Pass the TTL in seconds.
+This API will make the app readiness unhealthy. Pass the TTL in seconds.
 
 ```
 Request:

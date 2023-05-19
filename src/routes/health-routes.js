@@ -5,7 +5,12 @@ const {
   readinessUnhealthyRequestBodySchema,
   livenessUnhealthyRequestBodySchema
 } = require('../schemas/health-route-response-schema');
-const { READINESS_STATUS, LIVENESS_STATUS, UNHEALTHY } = require('../configs/cors-config');
+const {
+  READINESS_STATUS,
+  LIVENESS_STATUS,
+  UNHEALTHY,
+  CACHE_DEFAULT_TTL_IN_SECONDS
+} = require('../contants');
 
 module.exports = async function HealthRoutes(fastify, services) {
   fastify.route({
@@ -60,7 +65,7 @@ module.exports = async function HealthRoutes(fastify, services) {
       }
     },
     handler: async function (request, reply) {
-      const ttl = parseInt(request.body?.data?.ttl || 60);
+      const ttl = parseInt(request.body?.data?.ttl || CACHE_DEFAULT_TTL_IN_SECONDS);
       services.cacheService.set(READINESS_STATUS, UNHEALTHY, ttl);
       reply.code(200).send({ data: { message: 'I am unhealthy!' } });
     }
@@ -78,7 +83,7 @@ module.exports = async function HealthRoutes(fastify, services) {
       }
     },
     handler: async function (request, reply) {
-      const ttl = parseInt(request.body?.data?.ttl || 60);
+      const ttl = parseInt(request.body?.data?.ttl || CACHE_DEFAULT_TTL_IN_SECONDS);
       services.cacheService.set(LIVENESS_STATUS, UNHEALTHY, ttl);
       reply.code(200).send({ data: { message: 'I am unhealthy!' } });
     }

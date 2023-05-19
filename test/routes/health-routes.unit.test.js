@@ -1,7 +1,7 @@
 'use strict';
 const FastifyModule = require('fastify');
 const HealthRoutes = require('../../src/routes/health-routes');
-const { UNHEALTHY } = require('../../src/configs/cors-config');
+const { UNHEALTHY } = require('../../src/contants');
 
 describe('Testing health routes', () => {
   let fastify;
