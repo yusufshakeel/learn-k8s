@@ -7,6 +7,8 @@ This project is about learning Kubernetes.
 * [Postman Collection](#postman-collection)
 * [Localhost server](#localhost-server)
 * [API endpoints](#api-endpoints)
+* [Docker Image](#docker-image)
+* [Docker Container in localhost](#docker-container-in-localhost)
 
 ## Prerequisite
 
@@ -294,6 +296,26 @@ To run the test suite.
 ```shell
 npm run test
 ```
+
+## Docker Image
+
+DockerHub link of this project [yusufshakeel/learn-k8s](https://hub.docker.com/r/yusufshakeel/learn-k8s)
+
+To pull the image on your localhost.
+
+```shell
+docker pull yusufshakeel/learn-k8s
+```
+
+## Docker Container in localhost
+
+To run the docker container in localhost.
+
+```shell
+docker run -d -p 3000:3000 yusufshakeel/learn-k8s
+```
+
+This will start the server on port 3000.
 
 ## License
 
