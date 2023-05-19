@@ -31,7 +31,8 @@
     "@fastify/helmet": "^10.1.1",
     "config": "^3.3.9",
     "fastify": "^4.17.0",
-    "fastify-metrics": "^10.3.0"
+    "fastify-metrics": "^10.3.0",
+    "node-cache": "^5.1.2"
   },
   "devDependencies": {
     "eslint": "^8.40.0",
