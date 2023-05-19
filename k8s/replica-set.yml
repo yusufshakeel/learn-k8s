@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: learn-k8s-replica-set
+  labels:
+    app: learn-k8s
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: learn-k8s
+  template:
+    metadata:
+      name: learn-k8s
+      labels:
+        app: learn-k8s
+    spec:
+      containers:
+        - name: learn-k8s
+          image: yusufshakeel/learn-k8s
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              port: 3000
+              path: /readiness
+            initialDelaySeconds: 30
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              port: 3000
+              path: /liveness
+            initialDelaySeconds: 30
+            periodSeconds: 5

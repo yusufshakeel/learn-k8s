@@ -9,4 +9,5 @@ We can create and test out the image on our machine using any of the following.
 
 ## Notes
 
-* [1. Readme Pod](./README-POD.md)
+* [1. Pod](notes/pod.md)
+* [2. Replica Set](notes/replica-set.md)
