@@ -73,7 +73,7 @@ describe('Testing health routes', () => {
     const response = await fastify.inject({
       method: 'PUT',
       url: '/readiness/make/unhealthy',
-      payload: { data: { ttl: 10 } }
+      payload: {}
     });
     expect(response.statusCode).toBe(200);
     expect(response.json()).toStrictEqual({ data: { message: 'I am unhealthy!' } });
@@ -83,7 +83,7 @@ describe('Testing health routes', () => {
     const response = await fastify.inject({
       method: 'PUT',
       url: '/liveness/make/unhealthy',
-      payload: { data: { ttl: 10 } }
+      payload: {}
     });
     expect(response.statusCode).toBe(200);
     expect(response.json()).toStrictEqual({ data: { message: 'I am unhealthy!' } });

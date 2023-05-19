@@ -60,7 +60,7 @@ module.exports = async function HealthRoutes(fastify, services) {
       }
     },
     handler: async function (request, reply) {
-      const ttl = parseInt(request.body?.data?.ttl);
+      const ttl = parseInt(request.body?.data?.ttl || 60);
       services.cacheService.set(READINESS_STATUS, UNHEALTHY, ttl);
       reply.code(200).send({ data: { message: 'I am unhealthy!' } });
     }
@@ -78,8 +78,8 @@ module.exports = async function HealthRoutes(fastify, services) {
       }
     },
     handler: async function (request, reply) {
-      const ttl = parseInt(request.body?.data?.ttl);
-      services.cacheService.set(READINESS_STATUS, UNHEALTHY, ttl);
+      const ttl = parseInt(request.body?.data?.ttl || 60);
+      services.cacheService.set(LIVENESS_STATUS, UNHEALTHY, ttl);
       reply.code(200).send({ data: { message: 'I am unhealthy!' } });
     }
   });

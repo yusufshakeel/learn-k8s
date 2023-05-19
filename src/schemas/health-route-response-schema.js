@@ -18,7 +18,7 @@ const readinessUnhealthyRequestBodySchema = {
     data: {
       type: 'object',
       properties: {
-        ttl: { type: 'number', description: 'In seconds.', ['default']: 60 }
+        ttl: { type: 'number', description: 'In seconds.' }
       }
     }
   }
@@ -30,7 +30,7 @@ const livenessUnhealthyRequestBodySchema = {
     data: {
       type: 'object',
       properties: {
-        ttl: { type: 'number', description: 'In seconds.', ['default']: 60 }
+        ttl: { type: 'number', description: 'In seconds.' }
       }
     }
   }
