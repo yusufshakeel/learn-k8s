@@ -1,0 +1,729 @@
+{
+	"info": {
+		"_postman_id": "7fa14562-5c78-4c51-8f72-fae6cb4c8418",
+		"name": "Learn-k8s",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN_URL}}",
+					"host": [
+						"{{DOMAIN_URL}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Home",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN_URL}}",
+							"host": [
+								"{{DOMAIN_URL}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "36"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 May 2023 12:25:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"message\": \"Hello, World!\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Liveness",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN_URL}}/liveness",
+					"host": [
+						"{{DOMAIN_URL}}"
+					],
+					"path": [
+						"liveness"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Liveness",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN_URL}}/liveness",
+							"host": [
+								"{{DOMAIN_URL}}"
+							],
+							"path": [
+								"liveness"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "34"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 May 2023 12:25:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"message\": \"I am alive!\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Readiness",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN_URL}}/readiness",
+					"host": [
+						"{{DOMAIN_URL}}"
+					],
+					"path": [
+						"readiness"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Readiness",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN_URL}}/readiness",
+							"host": [
+								"{{DOMAIN_URL}}"
+							],
+							"path": [
+								"readiness"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "34"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 May 2023 12:25:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"message\": \"I am ready!\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN_URL}}/metrics",
+					"host": [
+						"{{DOMAIN_URL}}"
+					],
+					"path": [
+						"metrics"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Metrics",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN_URL}}/metrics",
+							"host": [
+								"{{DOMAIN_URL}}"
+							],
+							"path": [
+								"metrics"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "text/plain; version=0.0.4; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "14233"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 May 2023 12:26:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						}
+					],
+					"cookie": [],
+					"body": "# HELP process_cpu_user_seconds_total Total user CPU time spent in seconds.\n# TYPE process_cpu_user_seconds_total counter\nprocess_cpu_user_seconds_total 0.22259\n\n# HELP process_cpu_system_seconds_total Total system CPU time spent in seconds.\n# TYPE process_cpu_system_seconds_total counter\nprocess_cpu_system_seconds_total 0.09235\n\n# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.\n# TYPE process_cpu_seconds_total counter\nprocess_cpu_seconds_total 0.31494\n\n# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.\n# TYPE process_start_time_seconds gauge\nprocess_start_time_seconds 1684499115\n\n# HELP process_resident_memory_bytes Resident memory size in bytes.\n# TYPE process_resident_memory_bytes gauge\nprocess_resident_memory_bytes 52051968\n\n# HELP nodejs_eventloop_lag_seconds Lag of event loop in seconds.\n# TYPE nodejs_eventloop_lag_seconds gauge\nnodejs_eventloop_lag_seconds 0\n\n# HELP nodejs_eventloop_lag_min_seconds The minimum recorded event loop delay.\n# TYPE nodejs_eventloop_lag_min_seconds gauge\nnodejs_eventloop_lag_min_seconds 0.009183232\n\n# HELP nodejs_eventloop_lag_max_seconds The maximum recorded event loop delay.\n# TYPE nodejs_eventloop_lag_max_seconds gauge\nnodejs_eventloop_lag_max_seconds 0.040206335\n\n# HELP nodejs_eventloop_lag_mean_seconds The mean of the recorded event loop delays.\n# TYPE nodejs_eventloop_lag_mean_seconds gauge\nnodejs_eventloop_lag_mean_seconds 0.010997716114285716\n\n# HELP nodejs_eventloop_lag_stddev_seconds The standard deviation of the recorded event loop delays.\n# TYPE nodejs_eventloop_lag_stddev_seconds gauge\nnodejs_eventloop_lag_stddev_seconds 0.001244714818573531\n\n# HELP nodejs_eventloop_lag_p50_seconds The 50th percentile of the recorded event loop delays.\n# TYPE nodejs_eventloop_lag_p50_seconds gauge\nnodejs_eventloop_lag_p50_seconds 0.011051007\n\n# HELP nodejs_eventloop_lag_p90_seconds The 90th percentile of the recorded event loop delays.\n# TYPE nodejs_eventloop_lag_p90_seconds gauge\nnodejs_eventloop_lag_p90_seconds 0.011214847\n\n# HELP nodejs_eventloop_lag_p99_seconds The 99th percentile of the recorded event loop delays.\n# TYPE nodejs_eventloop_lag_p99_seconds gauge\nnodejs_eventloop_lag_p99_seconds 0.014368767\n\n# HELP nodejs_active_resources Number of active resources that are currently keeping the event loop alive, grouped by async resource type.\n# TYPE nodejs_active_resources gauge\nnodejs_active_resources{type=\"TTYWrap\"} 2\nnodejs_active_resources{type=\"PipeWrap\"} 1\nnodejs_active_resources{type=\"TCPServerWrap\"} 1\nnodejs_active_resources{type=\"TCPSocketWrap\"} 1\nnodejs_active_resources{type=\"Immediate\"} 1\n\n# HELP nodejs_active_resources_total Total number of active resources.\n# TYPE nodejs_active_resources_total gauge\nnodejs_active_resources_total 6\n\n# HELP nodejs_active_handles Number of active libuv handles grouped by handle type. Every handle type is C++ class name.\n# TYPE nodejs_active_handles gauge\nnodejs_active_handles{type=\"WriteStream\"} 2\nnodejs_active_handles{type=\"Socket\"} 2\nnodejs_active_handles{type=\"Server\"} 1\n\n# HELP nodejs_active_handles_total Total number of active handles.\n# TYPE nodejs_active_handles_total gauge\nnodejs_active_handles_total 5\n\n# HELP nodejs_active_requests Number of active libuv requests grouped by request type. Every request type is C++ class name.\n# TYPE nodejs_active_requests gauge\n\n# HELP nodejs_active_requests_total Total number of active requests.\n# TYPE nodejs_active_requests_total gauge\nnodejs_active_requests_total 0\n\n# HELP nodejs_heap_size_total_bytes Process heap size from Node.js in bytes.\n# TYPE nodejs_heap_size_total_bytes gauge\nnodejs_heap_size_total_bytes 15826944\n\n# HELP nodejs_heap_size_used_bytes Process heap size used from Node.js in bytes.\n# TYPE nodejs_heap_size_used_bytes gauge\nnodejs_heap_size_used_bytes 14140472\n\n# HELP nodejs_external_memory_bytes Node.js external memory size in bytes.\n# TYPE nodejs_external_memory_bytes gauge\nnodejs_external_memory_bytes 985492\n\n# HELP nodejs_heap_space_size_total_bytes Process heap space size total from Node.js in bytes.\n# TYPE nodejs_heap_space_size_total_bytes gauge\nnodejs_heap_space_size_total_bytes{space=\"read_only\"} 0\nnodejs_heap_space_size_total_bytes{space=\"old\"} 12206080\nnodejs_heap_space_size_total_bytes{space=\"code\"} 1228800\nnodejs_heap_space_size_total_bytes{space=\"map\"} 1064960\nnodejs_heap_space_size_total_bytes{space=\"large_object\"} 278528\nnodejs_heap_space_size_total_bytes{space=\"code_large_object\"} 0\nnodejs_heap_space_size_total_bytes{space=\"new_large_object\"} 0\nnodejs_heap_space_size_total_bytes{space=\"new\"} 1048576\n\n# HELP nodejs_heap_space_size_used_bytes Process heap space size used from Node.js in bytes.\n# TYPE nodejs_heap_space_size_used_bytes gauge\nnodejs_heap_space_size_used_bytes{space=\"read_only\"} 0\nnodejs_heap_space_size_used_bytes{space=\"old\"} 11938688\nnodejs_heap_space_size_used_bytes{space=\"code\"} 948000\nnodejs_heap_space_size_used_bytes{space=\"map\"} 557856\nnodejs_heap_space_size_used_bytes{space=\"large_object\"} 262160\nnodejs_heap_space_size_used_bytes{space=\"code_large_object\"} 0\nnodejs_heap_space_size_used_bytes{space=\"new_large_object\"} 0\nnodejs_heap_space_size_used_bytes{space=\"new\"} 442952\n\n# HELP nodejs_heap_space_size_available_bytes Process heap space size available from Node.js in bytes.\n# TYPE nodejs_heap_space_size_available_bytes gauge\nnodejs_heap_space_size_available_bytes{space=\"read_only\"} 0\nnodejs_heap_space_size_available_bytes{space=\"old\"} 22760\nnodejs_heap_space_size_available_bytes{space=\"code\"} 0\nnodejs_heap_space_size_available_bytes{space=\"map\"} 485104\nnodejs_heap_space_size_available_bytes{space=\"large_object\"} 0\nnodejs_heap_space_size_available_bytes{space=\"code_large_object\"} 0\nnodejs_heap_space_size_available_bytes{space=\"new_large_object\"} 1030976\nnodejs_heap_space_size_available_bytes{space=\"new\"} 588024\n\n# HELP nodejs_version_info Node.js version info.\n# TYPE nodejs_version_info gauge\nnodejs_version_info{version=\"v18.16.0\",major=\"18\",minor=\"16\",patch=\"0\"} 1\n\n# HELP nodejs_gc_duration_seconds Garbage collection duration by kind, one of major, minor, incremental or weakcb.\n# TYPE nodejs_gc_duration_seconds histogram\nnodejs_gc_duration_seconds_bucket{le=\"0.001\",kind=\"incremental\"} 5\nnodejs_gc_duration_seconds_bucket{le=\"0.01\",kind=\"incremental\"} 6\nnodejs_gc_duration_seconds_bucket{le=\"0.1\",kind=\"incremental\"} 6\nnodejs_gc_duration_seconds_bucket{le=\"1\",kind=\"incremental\"} 6\nnodejs_gc_duration_seconds_bucket{le=\"2\",kind=\"incremental\"} 6\nnodejs_gc_duration_seconds_bucket{le=\"5\",kind=\"incremental\"} 6\nnodejs_gc_duration_seconds_bucket{le=\"+Inf\",kind=\"incremental\"} 6\nnodejs_gc_duration_seconds_sum{kind=\"incremental\"} 0.002285668134689331\nnodejs_gc_duration_seconds_count{kind=\"incremental\"} 6\nnodejs_gc_duration_seconds_bucket{le=\"0.001\",kind=\"major\"} 0\nnodejs_gc_duration_seconds_bucket{le=\"0.01\",kind=\"major\"} 3\nnodejs_gc_duration_seconds_bucket{le=\"0.1\",kind=\"major\"} 3\nnodejs_gc_duration_seconds_bucket{le=\"1\",kind=\"major\"} 3\nnodejs_gc_duration_seconds_bucket{le=\"2\",kind=\"major\"} 3\nnodejs_gc_duration_seconds_bucket{le=\"5\",kind=\"major\"} 3\nnodejs_gc_duration_seconds_bucket{le=\"+Inf\",kind=\"major\"} 3\nnodejs_gc_duration_seconds_sum{kind=\"major\"} 0.006284207940101623\nnodejs_gc_duration_seconds_count{kind=\"major\"} 3\n\n# HELP http_request_duration_seconds request duration in seconds\n# TYPE http_request_duration_seconds histogram\nhttp_request_duration_seconds_bucket{le=\"0.005\",method=\"GET\",route=\"/\",status_code=\"200\"} 0\nhttp_request_duration_seconds_bucket{le=\"0.01\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.025\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.05\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.1\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.25\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.5\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"1\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"2.5\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"5\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"10\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"+Inf\",method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_sum{method=\"GET\",route=\"/\",status_code=\"200\"} 0.007952208\nhttp_request_duration_seconds_count{method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.005\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.01\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.025\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.05\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.1\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.25\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.5\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"1\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"2.5\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"5\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"10\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"+Inf\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_sum{method=\"GET\",route=\"/liveness\",status_code=\"200\"} 0.001339125\nhttp_request_duration_seconds_count{method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.005\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.01\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.025\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.05\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.1\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.25\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"0.5\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"1\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"2.5\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"5\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"10\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_bucket{le=\"+Inf\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\nhttp_request_duration_seconds_sum{method=\"GET\",route=\"/readiness\",status_code=\"200\"} 0.002833125\nhttp_request_duration_seconds_count{method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\n\n# HELP http_request_summary_seconds request duration in seconds summary\n# TYPE http_request_summary_seconds summary\nhttp_request_summary_seconds{quantile=\"0.01\",method=\"GET\",route=\"/\",status_code=\"200\"} 0.006881791\nhttp_request_summary_seconds{quantile=\"0.05\",method=\"GET\",route=\"/\",status_code=\"200\"} 0.006881791\nhttp_request_summary_seconds{quantile=\"0.5\",method=\"GET\",route=\"/\",status_code=\"200\"} 0.006881791\nhttp_request_summary_seconds{quantile=\"0.9\",method=\"GET\",route=\"/\",status_code=\"200\"} 0.006881791\nhttp_request_summary_seconds{quantile=\"0.95\",method=\"GET\",route=\"/\",status_code=\"200\"} 0.006881791\nhttp_request_summary_seconds{quantile=\"0.99\",method=\"GET\",route=\"/\",status_code=\"200\"} 0.006881791\nhttp_request_summary_seconds{quantile=\"0.999\",method=\"GET\",route=\"/\",status_code=\"200\"} 0.006881791\nhttp_request_summary_seconds_sum{method=\"GET\",route=\"/\",status_code=\"200\"} 0.006881791\nhttp_request_summary_seconds_count{method=\"GET\",route=\"/\",status_code=\"200\"} 1\nhttp_request_summary_seconds{quantile=\"0.01\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 0.001213708\nhttp_request_summary_seconds{quantile=\"0.05\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 0.001213708\nhttp_request_summary_seconds{quantile=\"0.5\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 0.001213708\nhttp_request_summary_seconds{quantile=\"0.9\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 0.001213708\nhttp_request_summary_seconds{quantile=\"0.95\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 0.001213708\nhttp_request_summary_seconds{quantile=\"0.99\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 0.001213708\nhttp_request_summary_seconds{quantile=\"0.999\",method=\"GET\",route=\"/liveness\",status_code=\"200\"} 0.001213708\nhttp_request_summary_seconds_sum{method=\"GET\",route=\"/liveness\",status_code=\"200\"} 0.001213708\nhttp_request_summary_seconds_count{method=\"GET\",route=\"/liveness\",status_code=\"200\"} 1\nhttp_request_summary_seconds{quantile=\"0.01\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 0.002698333\nhttp_request_summary_seconds{quantile=\"0.05\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 0.002698333\nhttp_request_summary_seconds{quantile=\"0.5\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 0.002698333\nhttp_request_summary_seconds{quantile=\"0.9\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 0.002698333\nhttp_request_summary_seconds{quantile=\"0.95\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 0.002698333\nhttp_request_summary_seconds{quantile=\"0.99\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 0.002698333\nhttp_request_summary_seconds{quantile=\"0.999\",method=\"GET\",route=\"/readiness\",status_code=\"200\"} 0.002698333\nhttp_request_summary_seconds_sum{method=\"GET\",route=\"/readiness\",status_code=\"200\"} 0.002698333\nhttp_request_summary_seconds_count{method=\"GET\",route=\"/readiness\",status_code=\"200\"} 1\n"
+				}
+			]
+		},
+		{
+			"name": "Metadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN_URL}}/metadata",
+					"host": [
+						"{{DOMAIN_URL}}"
+					],
+					"path": [
+						"metadata"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Metadata",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN_URL}}/metadata",
+							"host": [
+								"{{DOMAIN_URL}}"
+							],
+							"path": [
+								"metadata"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "1270"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 May 2023 12:35:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"os\": \"darwin\",\n        \"hostname\": \"Yusufs-MacBook-Pro-2.local\",\n        \"uptime\": {\n            \"unit\": \"sec\",\n            \"quantity\": \"891910\"\n        },\n        \"memory\": {\n            \"unit\": \"bytes\",\n            \"quantity\": \"17179869184\"\n        },\n        \"cpus\": [\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 99240520,\n                    \"nice\": 0,\n                    \"sys\": 57942390,\n                    \"idle\": 219834960,\n                    \"irq\": 0\n                }\n            },\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 98982960,\n                    \"nice\": 0,\n                    \"sys\": 56133650,\n                    \"idle\": 221958020,\n                    \"irq\": 0\n                }\n            },\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 70986210,\n                    \"nice\": 0,\n                    \"sys\": 22460250,\n                    \"idle\": 283594960,\n                    \"irq\": 0\n                }\n            },\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 59024820,\n                    \"nice\": 0,\n                    \"sys\": 18304050,\n                    \"idle\": 300078690,\n                    \"irq\": 0\n                }\n            },\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 27106960,\n                    \"nice\": 0,\n                    \"sys\": 10682850,\n                    \"idle\": 340279490,\n                    \"irq\": 0\n                }\n            },\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 16499990,\n                    \"nice\": 0,\n                    \"sys\": 7021470,\n                    \"idle\": 354777890,\n                    \"irq\": 0\n                }\n            },\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 14091740,\n                    \"nice\": 0,\n                    \"sys\": 5662450,\n                    \"idle\": 358840090,\n                    \"irq\": 0\n                }\n            },\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 8126050,\n                    \"nice\": 0,\n                    \"sys\": 2946660,\n                    \"idle\": 367830540,\n                    \"irq\": 0\n                }\n            },\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 6106220,\n                    \"nice\": 0,\n                    \"sys\": 2133890,\n                    \"idle\": 370782910,\n                    \"irq\": 0\n                }\n            },\n            {\n                \"model\": \"Apple M1 Pro\",\n                \"speed\": 24,\n                \"times\": {\n                    \"user\": 4906830,\n                    \"nice\": 0,\n                    \"sys\": 1637190,\n                    \"idle\": 372533820,\n                    \"irq\": 0\n                }\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN_URL}}/version",
+					"host": [
+						"{{DOMAIN_URL}}"
+					],
+					"path": [
+						"version"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Version",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN_URL}}/version",
+							"host": [
+								"{{DOMAIN_URL}}"
+							],
+							"path": [
+								"version"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "28"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 May 2023 13:25:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"version\": \"0.1.0\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
