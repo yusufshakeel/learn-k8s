@@ -1,0 +1,13 @@
+{
+  "environment": "ENVIRONMENT",
+  "nodeEnvironment": "NODE_ENV",
+  "fastify": {
+    "keepAliveTimeout": "FASTIFY_KEEP_ALIVE_TIMEOUT",
+    "host": "FASTIFY_HOST",
+    "port": "FASTIFY_PORT",
+    "loggerEnabled": "FASTIFY_LOGGER_ENABLED"
+  },
+  "application": {
+    "version": "APPLICATION_VERSION"
+  }
+}
