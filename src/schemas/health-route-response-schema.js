@@ -12,4 +12,16 @@ const responseSchema = {
   }
 };
 
-module.exports = responseSchema;
+const readinessUnhealthyRequestBodySchema = {
+  type: 'object',
+  properties: {
+    data: {
+      type: 'object',
+      properties: {
+        ttl: { type: 'number', description: 'In seconds.', ['default']: 60 }
+      }
+    }
+  }
+};
+
+module.exports = { responseSchema, readinessUnhealthyRequestBodySchema };

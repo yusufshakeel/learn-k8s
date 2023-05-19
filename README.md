@@ -80,6 +80,8 @@ Body:
 
 Use this for **readinessProbe** in Kubernetes.
 
+When pod is ready.
+
 ```
 GET /readiness
 Host: 0.0.0.0:3000
@@ -92,6 +94,61 @@ Body:
 {
     "data": {
         "message": "I am ready!"
+    }
+}
+```
+
+When pod is not ready.
+
+```
+GET /readiness
+Host: 0.0.0.0:3000
+
+curl --location 'http://0.0.0.0:3000/readiness'
+
+Response:
+Status: 500 Content-Type: application/json
+Body:
+{
+    "data": {
+        "message": "I am not ready!"
+    }
+}
+```
+
+### Readiness: make unhealthy
+
+This API will make the pod readiness unhealthy. Pass the TTL in seconds.
+
+```
+Request:
+{
+  "data": {
+    "ttl": 100
+  }
+}
+```
+
+Default ttl: 60 seconds.
+
+```
+GET /readiness/make/unhealthy
+Host: 0.0.0.0:3000
+
+curl --location --request PUT 'http://0.0.0.0:3000/readiness/make/unhealthy' \
+--header 'Content-Type: application/json' \
+--data '{
+    "data": {
+        "ttl": 10
+    }
+}'
+
+Response:
+Status: 200 Content-Type: application/json
+Body:
+{
+    "data": {
+        "message": "I am unhealthy!"
     }
 }
 ```

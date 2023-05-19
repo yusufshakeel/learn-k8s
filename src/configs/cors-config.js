@@ -1,4 +1,7 @@
 'use strict';
 module.exports = {
-  origin: '*'
+  origin: '*',
+  READINESS_STATUS: 'readiness-status',
+  HEALTHY: 'HEALTHY',
+  UNHEALTHY: 'UNHEALTHY'
 };

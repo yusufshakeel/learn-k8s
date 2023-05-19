@@ -16,7 +16,7 @@ module.exports = function Server({ fastify }) {
     await fastify.register(fastifyHelmet);
     await fastify.register(fastifyMetrics, { endpoint: '/metrics' });
     await fastify.register(routes.HomeRoutes);
-    await fastify.register(routes.HealthCheckRoutes);
+    await fastify.register(routes.HealthCheckRoutes, services);
     await fastify.register(routes.MetadataRoutes);
     await fastify.register(routes.VersionRoutes, services);
     return self;

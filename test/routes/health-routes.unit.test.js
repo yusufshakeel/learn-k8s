@@ -1,10 +1,16 @@
 'use strict';
-const fastify = require('fastify')();
+const FastifyModule = require('fastify');
 const HealthRoutes = require('../../src/routes/health-routes');
+const { UNHEALTHY } = require('../../src/configs/cors-config');
 
 describe('Testing health routes', () => {
+  let fastify;
+
   beforeAll(async () => {
-    await HealthRoutes(fastify);
+    fastify = FastifyModule();
+    await HealthRoutes(fastify, {
+      cacheService: { set: jest.fn(), del: jest.fn(), get: jest.fn() }
+    });
   });
 
   test('Should be able to call the liveness api endpoint', async () => {
@@ -16,12 +22,41 @@ describe('Testing health routes', () => {
     expect(response.json()).toStrictEqual({ data: { message: 'I am alive!' } });
   });
 
-  test('Should be able to call the readiness api endpoint', async () => {
+  describe('Testing readiness api endpoint', () => {
+    describe('When healthy', () => {
+      test('Should return 200', async () => {
+        const response = await fastify.inject({
+          method: 'GET',
+          url: '/readiness'
+        });
+        expect(response.statusCode).toBe(200);
+        expect(response.json()).toStrictEqual({ data: { message: 'I am ready!' } });
+      });
+    });
+
+    describe('When unhealthy', () => {
+      test('Should return 500', async () => {
+        const fastifyInstance = FastifyModule();
+        await HealthRoutes(fastifyInstance, {
+          cacheService: { set: jest.fn(), del: jest.fn(), get: jest.fn(() => UNHEALTHY) }
+        });
+        const response = await fastifyInstance.inject({
+          method: 'GET',
+          url: '/readiness'
+        });
+        expect(response.statusCode).toBe(500);
+        expect(response.json()).toStrictEqual({ data: { message: 'I am not ready!' } });
+      });
+    });
+  });
+
+  test('Should be able to call the readiness make unhealthy api endpoint', async () => {
     const response = await fastify.inject({
-      method: 'GET',
-      url: '/readiness'
+      method: 'PUT',
+      url: '/readiness/make/unhealthy',
+      payload: { data: { ttl: 10 } }
     });
     expect(response.statusCode).toBe(200);
-    expect(response.json()).toStrictEqual({ data: { message: 'I am ready!' } });
+    expect(response.json()).toStrictEqual({ data: { message: 'I am unhealthy!' } });
   });
 });
