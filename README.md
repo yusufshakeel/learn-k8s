@@ -4,6 +4,7 @@ This project is about learning Kubernetes.
 ## Table of Content
 * [Prerequisite](#prerequisite)
 * [Getting started](#getting-started)
+* [Postman Collection](#postman-collection)
 * [Localhost server](#localhost-server)
 * [API endpoints](#api-endpoints)
 
@@ -22,6 +23,10 @@ This is a NodeJS project. To get started, first install all the packages by runn
 npm i
 ```
 
+## Postman Collection
+
+Check the `docs` folder.
+
 ## Localhost server
 
 To start the localhost server.
@@ -38,6 +43,8 @@ Check out the `docs` folder. It has the Postman collection.
 ```
 GET /
 Host: 0.0.0.0:3000
+
+curl --location 'http://0.0.0.0:3000'
 
 Response:
 Status: 200 Content-Type: application/json
@@ -57,6 +64,8 @@ Use this for **livenessProbe** in Kubernetes.
 GET /liveness
 Host: 0.0.0.0:3000
 
+curl --location 'http://0.0.0.0:3000/liveness'
+
 Response: 
 Status: 200 Content-Type: application/json
 Body:
@@ -75,6 +84,8 @@ Use this for **readinessProbe** in Kubernetes.
 GET /readiness
 Host: 0.0.0.0:3000
 
+curl --location 'http://0.0.0.0:3000/readiness'
+
 Response:
 Status: 200 Content-Type: application/json
 Body:
@@ -90,6 +101,8 @@ Body:
 GET /version
 Host: 0.0.0.0:3000
 
+curl --location 'http://0.0.0.0:3000/version'
+
 Response:
 Status: 200 Content-Type: application/json
 Body:
@@ -104,10 +117,51 @@ To change the version set the environment variable APPLICATION_VERSION=`semver`.
 
 Example: `APPLICATION_VERSION=1.0.0`
 
+### Metadata
+```
+GET /metadata
+Host: 0.0.0.0:3000
+
+curl --location 'http://0.0.0.0:3000/metadata'
+
+Response:
+Status: 200 Content-Type: text/plain
+Body:
+{
+    "data": {
+        "os": "darwin",
+        "hostname": "Yusufs-MacBook-Pro-2.local",
+        "uptime": {
+            "unit": "sec",
+            "quantity": "891910"
+        },
+        "memory": {
+            "unit": "bytes",
+            "quantity": "17179869184"
+        },
+        "cpus": [
+            {
+                "model": "Apple M1 Pro",
+                "speed": 24,
+                "times": {
+                    "user": 99240520,
+                    "nice": 0,
+                    "sys": 57942390,
+                    "idle": 219834960,
+                    "irq": 0
+                }
+            }
+        ]
+    }
+}
+```
+
 ### Metrics
 ```
 GET /metrics
 Host: 0.0.0.0:3000
+
+curl --location 'http://0.0.0.0:3000/metrics'
 
 Response:
 Status: 200 Content-Type: text/plain
