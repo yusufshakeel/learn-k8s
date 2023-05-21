@@ -27,7 +27,7 @@ describe('Testing health routes', () => {
     });
 
     describe('When unhealthy', () => {
-      test('Should return 500', async () => {
+      test('Should return 503', async () => {
         const fastifyInstance = FastifyModule();
         await HealthRoutes(fastifyInstance, {
           cacheService: { set: jest.fn(), del: jest.fn(), get: jest.fn(() => UNHEALTHY) }
@@ -36,7 +36,7 @@ describe('Testing health routes', () => {
           method: 'GET',
           url: '/liveness'
         });
-        expect(response.statusCode).toBe(500);
+        expect(response.statusCode).toBe(503);
         expect(response.json()).toStrictEqual({ data: { message: 'I am not live!' } });
       });
     });
@@ -55,7 +55,7 @@ describe('Testing health routes', () => {
     });
 
     describe('When unhealthy', () => {
-      test('Should return 500', async () => {
+      test('Should return 503', async () => {
         const fastifyInstance = FastifyModule();
         await HealthRoutes(fastifyInstance, {
           cacheService: { set: jest.fn(), del: jest.fn(), get: jest.fn(() => UNHEALTHY) }
@@ -64,7 +64,7 @@ describe('Testing health routes', () => {
           method: 'GET',
           url: '/readiness'
         });
-        expect(response.statusCode).toBe(500);
+        expect(response.statusCode).toBe(503);
         expect(response.json()).toStrictEqual({ data: { message: 'I am not ready!' } });
       });
     });

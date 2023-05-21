@@ -26,7 +26,7 @@ module.exports = async function HealthRoutes(fastify, services) {
     },
     handler: async function (request, reply) {
       if ((await services.cacheService.get(LIVENESS_STATUS)) === UNHEALTHY) {
-        reply.code(500).send({ data: { message: 'I am not live!' } });
+        reply.code(503).send({ data: { message: 'I am not live!' } });
       } else {
         reply.code(200).send({ data: { message: 'I am live!' } });
       }
@@ -46,7 +46,7 @@ module.exports = async function HealthRoutes(fastify, services) {
     },
     handler: async function (request, reply) {
       if ((await services.cacheService.get(READINESS_STATUS)) === UNHEALTHY) {
-        reply.code(500).send({ data: { message: 'I am not ready!' } });
+        reply.code(503).send({ data: { message: 'I am not ready!' } });
       } else {
         reply.code(200).send({ data: { message: 'I am ready!' } });
       }
