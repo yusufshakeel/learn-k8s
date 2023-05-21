@@ -54,7 +54,8 @@ Status: 200 Content-Type: application/json
 Body:
 {
     "data": {
-        "message": "Hello, World!"
+        "message": "Hello, World!",
+        "hostname":"learn-k8s-replica-set-9ptct"
     }
 }
 ```
