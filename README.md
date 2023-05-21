@@ -55,7 +55,7 @@ Body:
 {
     "data": {
         "message": "Hello, World!",
-        "hostname":"learn-k8s-replica-set-9ptct"
+        "hostname": "hostname": "Yusufs-MBP-2"
     }
 }
 ```
