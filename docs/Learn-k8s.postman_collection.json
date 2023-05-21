@@ -254,8 +254,8 @@
 							]
 						}
 					},
-					"status": "Internal Server Error",
-					"code": 500,
+					"status": "Service Unavailable",
+					"code": 503,
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
@@ -621,8 +621,8 @@
 							]
 						}
 					},
-					"status": "Internal Server Error",
-					"code": 500,
+					"status": "Service Unavailable",
+					"code": 503,
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
