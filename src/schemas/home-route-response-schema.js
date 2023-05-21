@@ -6,7 +6,8 @@ const responseSchema = {
     data: {
       type: 'object',
       properties: {
-        message: { type: 'string' }
+        message: { type: 'string' },
+        hostname: { type: 'string' }
       }
     }
   }

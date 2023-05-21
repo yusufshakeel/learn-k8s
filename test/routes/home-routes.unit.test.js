@@ -13,6 +13,8 @@ describe('Testing home routes', () => {
       url: '/'
     });
     expect(response.statusCode).toBe(200);
-    expect(response.json()).toStrictEqual({ data: { message: 'Hello, World!' } });
+    expect(response.json()).toStrictEqual({
+      data: { message: 'Hello, World!', hostname: expect.any(String) }
+    });
   });
 });

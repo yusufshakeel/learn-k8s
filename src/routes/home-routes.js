@@ -1,5 +1,6 @@
 'use strict';
 
+const os = require('os');
 const responseSchema = require('../schemas/home-route-response-schema');
 
 module.exports = async function HomeRoutes(fastify) {
@@ -14,7 +15,7 @@ module.exports = async function HomeRoutes(fastify) {
       }
     },
     handler: async function (request, reply) {
-      reply.code(200).send({ data: { message: 'Hello, World!' } });
+      reply.code(200).send({ data: { message: 'Hello, World!', hostname: os.hostname() } });
     }
   });
 

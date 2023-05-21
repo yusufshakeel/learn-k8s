@@ -1,6 +1,8 @@
 # learn-k8s
 This project is about learning Kubernetes.
 
+[![Build Status](https://github.com/yusufshakeel/learn-k8s/actions/workflows/ci.yml/badge.svg)](https://github.com/yusufshakeel/learn-k8s/actions/workflows/ci.yml)
+
 ## Table of Content
 * [Prerequisite](#prerequisite)
 * [Getting started](#getting-started)
