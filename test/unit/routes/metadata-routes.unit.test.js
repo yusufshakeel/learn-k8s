@@ -1,6 +1,6 @@
 'use strict';
 const fastify = require('fastify')();
-const MetadataRoutes = require('../../src/routes/metadata-routes');
+const MetadataRoutes = require('../../../src/routes/metadata-routes');
 
 describe('Testing metadata routes', () => {
   beforeAll(async () => {

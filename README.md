@@ -47,9 +47,6 @@ Check out the `docs` folder. It has the Postman collection.
 
 ### Home
 ```
-GET /
-Host: 0.0.0.0:3000
-
 curl --location 'http://0.0.0.0:3000'
 
 Response:
@@ -69,9 +66,6 @@ Use this for **livenessProbe** in Kubernetes.
 When the app is live.
 
 ```
-GET /liveness
-Host: 0.0.0.0:3000
-
 curl --location 'http://0.0.0.0:3000/liveness'
 
 Response: 
@@ -87,9 +81,6 @@ Body:
 When the app is not live.
 
 ```
-GET /liveness
-Host: 0.0.0.0:3000
-
 curl --location 'http://0.0.0.0:3000/liveness'
 
 Response:
@@ -118,9 +109,6 @@ Request:
 Default ttl: 60 seconds.
 
 ```
-GET /liveness/make/unhealthy
-Host: 0.0.0.0:3000
-
 curl --location --request PUT 'http://0.0.0.0:3000/liveness/make/unhealthy' \
 --header 'Content-Type: application/json' \
 --data '{"data":{"ttl": 10}}'
@@ -142,9 +130,6 @@ Use this for **readinessProbe** in Kubernetes.
 When the app is ready.
 
 ```
-GET /readiness
-Host: 0.0.0.0:3000
-
 curl --location 'http://0.0.0.0:3000/readiness'
 
 Response:
@@ -160,9 +145,6 @@ Body:
 When the app is not ready.
 
 ```
-GET /readiness
-Host: 0.0.0.0:3000
-
 curl --location 'http://0.0.0.0:3000/readiness'
 
 Response:
@@ -191,9 +173,6 @@ Request:
 Default ttl: 60 seconds.
 
 ```
-GET /readiness/make/unhealthy
-Host: 0.0.0.0:3000
-
 curl --location --request PUT 'http://0.0.0.0:3000/readiness/make/unhealthy' \
 --header 'Content-Type: application/json' \
 --data '{"data":{"ttl": 10}}'
@@ -210,9 +189,6 @@ Body:
 
 ### Version
 ```
-GET /version
-Host: 0.0.0.0:3000
-
 curl --location 'http://0.0.0.0:3000/version'
 
 Response:
@@ -231,13 +207,10 @@ Example: `APPLICATION_VERSION=1.0.0`
 
 ### Metadata
 ```
-GET /metadata
-Host: 0.0.0.0:3000
-
 curl --location 'http://0.0.0.0:3000/metadata'
 
 Response:
-Status: 200 Content-Type: text/plain
+Status: 200 Content-Type: application/json
 Body:
 {
     "data": {
@@ -268,11 +241,25 @@ Body:
 }
 ```
 
+### Die
+
+This will kill the server, and it will not work anymore.
+
+```
+curl --location --request POST 'http://0.0.0.0:3000/die'
+
+Response:
+Status: 200 Content-Type: application/json
+Body:
+{
+    "data": {
+        "message": "Goodbye..."
+    }
+}
+```
+
 ### Metrics
 ```
-GET /metrics
-Host: 0.0.0.0:3000
-
 curl --location 'http://0.0.0.0:3000/metrics'
 
 Response:

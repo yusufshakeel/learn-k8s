@@ -1,5 +1,5 @@
 'use strict';
-const CacheService = require('../../src/services/cache-service');
+const CacheService = require('../../../src/services/cache-service');
 
 describe('Testing cache service', () => {
   const set = jest.fn();

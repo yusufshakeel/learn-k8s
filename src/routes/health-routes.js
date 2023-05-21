@@ -89,5 +89,21 @@ module.exports = async function HealthRoutes(fastify, services) {
     }
   });
 
+  fastify.route({
+    method: 'POST',
+    url: '/die',
+    schema: {
+      tags: ['Health Check'],
+      description: 'Make app die.',
+      response: {
+        200: responseSchema
+      }
+    },
+    handler: async function (request, reply) {
+      setTimeout(() => fastify.close(), 3000);
+      reply.code(200).send({ data: { message: 'Goodbye...' } });
+    }
+  });
+
   return fastify;
 };

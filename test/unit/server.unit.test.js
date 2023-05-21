@@ -1,7 +1,7 @@
 'use strict';
 
 const fastifyModule = require('fastify');
-const Server = require('../src/server');
+const Server = require('../../src/server');
 
 describe('Testing Server', () => {
   describe('Testing setup()', () => {

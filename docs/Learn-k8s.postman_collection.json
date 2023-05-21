@@ -1216,6 +1216,127 @@
 					"body": "{\n    \"data\": {\n        \"version\": \"0.1.0\"\n    }\n}"
 				}
 			]
+		},
+		{
+			"name": "Die",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN_URL}}/die",
+					"host": [
+						"{{DOMAIN_URL}}"
+					],
+					"path": [
+						"die"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Die",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN_URL}}/die",
+							"host": [
+								"{{DOMAIN_URL}}"
+							],
+							"path": [
+								"die"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "vary",
+							"value": "Origin"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "33"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 21 May 2023 09:56:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"message\": \"Goodbye...\"\n    }\n}"
+				}
+			]
 		}
 	]
 }

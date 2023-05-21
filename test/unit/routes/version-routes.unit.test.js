@@ -1,6 +1,6 @@
 'use strict';
 const fastify = require('fastify')();
-const VersionRoutes = require('../../src/routes/version-routes');
+const VersionRoutes = require('../../../src/routes/version-routes');
 
 describe('Testing version routes', () => {
   beforeAll(async () => {

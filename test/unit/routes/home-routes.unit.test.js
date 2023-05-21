@@ -1,6 +1,6 @@
 'use strict';
 const fastify = require('fastify')();
-const HomeRoutes = require('../../src/routes/home-routes');
+const HomeRoutes = require('../../../src/routes/home-routes');
 
 describe('Testing home routes', () => {
   beforeAll(async () => {
