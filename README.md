@@ -121,11 +121,7 @@ Host: 0.0.0.0:3000
 
 curl --location --request PUT 'http://0.0.0.0:3000/liveness/make/unhealthy' \
 --header 'Content-Type: application/json' \
---data '{
-    "data": {
-        "ttl": 10
-    }
-}'
+--data '{"data":{"ttl": 10}}'
 
 Response:
 Status: 200 Content-Type: application/json
@@ -198,11 +194,7 @@ Host: 0.0.0.0:3000
 
 curl --location --request PUT 'http://0.0.0.0:3000/readiness/make/unhealthy' \
 --header 'Content-Type: application/json' \
---data '{
-    "data": {
-        "ttl": 10
-    }
-}'
+--data '{"data":{"ttl": 10}}'
 
 Response:
 Status: 200 Content-Type: application/json

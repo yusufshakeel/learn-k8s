@@ -7,7 +7,7 @@
 replicaset.apps/learn-k8s-replica-set created
 ```
 
-## Now we fetch all the objects.
+### Now we fetch all the objects.
 
 ```
 ➜  kubectl get all
@@ -22,7 +22,7 @@ NAME                                    DESIRED   CURRENT   READY   AGE
 replicaset.apps/learn-k8s-replica-set   2         2         2       2m58s
 ```
 
-## Call one Pod from inside another Pod
+### Call one Pod from inside another Pod
 
 ```
 ➜ kubectl get pods -o wide
@@ -36,7 +36,7 @@ learn-k8s-replica-set-q82r4   1/1     Running   0          86s   10.42.0.86   li
 {"data":{"message":"Hello, World!"}}
 ```
 
-## Port forwarding to one of the pods.
+### Port forwarding to one of the pods.
 
 ```
 ➜ kubectl port-forward pod/learn-k8s-replica-set-cb54h 3000:3000
