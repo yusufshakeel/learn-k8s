@@ -55,7 +55,7 @@ Body:
 {
     "data": {
         "message": "Hello, World!",
-        "hostname": "hostname": "Yusufs-MBP-2"
+        "hostname": "Yusufs-MBP-2"
     }
 }
 ```
